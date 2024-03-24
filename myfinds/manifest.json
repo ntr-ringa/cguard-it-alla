@@ -1,0 +1,38 @@
+{
+	"manifest_version": 3,
+	"name": "Cguard-it-Olla",
+	"version": "1.0",
+	"description": "Detects phishing and cybersquatting attempts on websites.",
+	"options_page": "options.html",	  
+	"icons": {
+	  "128": "eye-crossed128.png",
+	  "64": "eye-crossed64.png",
+	  "32": "eye-crossed32.png",
+	  "24": "eye-crossed24.png",
+	  "16": "eye-crossed16.png"
+	},
+	"host_permissions": [
+	  "*://*/*"
+	],
+	"permissions": [
+		"tabs",
+		"storage",
+		"activeTab",
+		"webNavigation"
+	  ],
+	"background": {
+	  "service_worker": "background2.js"
+	},
+	"action": {
+	  "default_icon": "eye-crossed16.png",
+	  "default_popup": "popup.html",
+	  "default_title": "Cguard-it-Olla"
+	},
+	"content_scripts": [
+	  {
+		"matches": ["<all_urls>"],
+		"js": ["content.js"]
+	  }
+	]
+  }
+  
